@@ -65,3 +65,11 @@ plt.savefig('output/fig/TESLA_USD_Predictions.png')
 plt.clf()  # Clear the current figure
 
 # Calculate metrics
+mae_score = mean_absolute_error(y_test, preds)
+mse_score = mean_squared_error(y_test, preds)
+r2 = r2_score(y_test, preds)
+
+# Output evaluation  metrics
+print(f'Mean Absolute Error: {mae_score}')
+print(f'Mean Squared Error: {mse_score}')
+print(f'R2 Score: {r2}')

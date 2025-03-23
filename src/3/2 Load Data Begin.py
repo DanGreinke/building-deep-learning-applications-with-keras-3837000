@@ -10,3 +10,18 @@ import matplotlib.pyplot as plt
 
 
 # Load the data
+data = pd.read_csv('input/data/Tesla_Nasdaq_Prediction.csv')
+# print(data.head())
+
+# Prepare the Dataset
+features = data.iloc[:,2:].values
+target = data['Close/Last'].values
+# print(target_df.head())
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(features, 
+                                                    target, 
+                                                    test_size=0.2,
+                                                    random_state=42, 
+                                                    shuffle=False
+                                                    )
